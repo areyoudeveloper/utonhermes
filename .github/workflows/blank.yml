@@ -11,7 +11,7 @@ name: Build System Image
 on: 
   push:
     branches:
-      - master
+      - main
   release:
     types: [published]
 
@@ -48,7 +48,7 @@ jobs:
         mkdir -p ~/bin
         wget 'https://storage.googleapis.com/git-repo-downloads/repo' -P ~/bin
         chmod +x ~/bin/repo
-        git config --global user.name "UBports Redmi 3X/S/SP CI"
+        git config --global user.name "UBports Redmi Note 2 CI"
         git config --global user.email "kmd36rk@gmail.com"
 
     - name: Downloading source code
@@ -58,7 +58,7 @@ jobs:
         cd $ANDROID_ROOT
         repo init -u https://github.com/Halium/android -b halium-7.1 --depth=1
         mkdir -p $ANDROID_ROOT/.repo/local_manifests
-        wget https://raw.githubusercontent.com/areyoudeveloper/utonhermes/master/"$VENDOR"_"$DEVICE".xml -O $ANDROID_ROOT/.repo/local_manifests/$DEVICE.xml
+        wget https://raw.githubusercontent.com/areyoudeveloper/utonhermes/main/"$VENDOR"_"$DEVICE".xml -O $ANDROID_ROOT/.repo/local_manifests/$DEVICE.xml
         repo sync -j8 -c --no-clone-bundle --no-tags
     
     - name: Build HAL
