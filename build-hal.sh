@@ -12,6 +12,6 @@ mka recoveryimage
 mka systemimage 
 
 echo "md5sum halium-boot.img and system.img"
-md5sum $ANDROID_ROOT/out/target/product/lantoni/halium-boot.img
-md5sum $ANDROID_ROOT/out/target/product/lantoni/recovery.img
-md5sum $ANDROID_ROOT/out/target/product/lantoni/system.img
+md5sum $ANDROID_ROOT/out/target/product/hermes/halium-boot.img
+md5sum $ANDROID_ROOT/out/target/product/hermes/recovery.img
+md5sum $ANDROID_ROOT/out/target/product/hermes/system.img
